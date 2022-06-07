@@ -1,9 +1,9 @@
-const ProductsPaige = () => {
+const ProductsPage = () => {
   return (
     <div>
-      <h1>ProductsPaige</h1>
+      <h1>ProductsPage</h1>
     </div>
   );
 };
 
-export default ProductsPaige;
+export default ProductsPage;
