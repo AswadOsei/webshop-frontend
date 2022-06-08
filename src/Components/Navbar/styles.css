@@ -2,47 +2,53 @@
   /* full width */
   width: 100%;
   /* Fixed height */
-  height: 150px;
+  height: 160px;
   background-color: #8568ff;
   /* flex box */
-  display: inline-flex;
+  display: flex;
+  float: right;
   flex-direction: row;
+  justify-content: right;
   padding: 20px;
-  align-items: flex-end;
 }
-
 .navbar-left-container {
-  border: solid black 1px;
-  display: inline-flex;
+  display: flex;
   flex-direction: row;
-  margin-left: 500px;
-  width: 70%;
-}
-
-.navbar-right-container {
-  border: solid black 1px;
-  margin: 20px;
-  justify-content: space-between;
-  padding: 10px;
-  width: 10%;
-}
-
-.small-right-container {
-  border: solid black 1px;
-  justify-content: center;
-  display: inline-flex;
-  flex-direction: column;
-  width: 40%;
+  margin-right: 40px;
 }
 .small-left-container {
-  border: solid black 1px;
-  width: 200px;
-  display: inline-flex;
-  width: 60%;
-  flex-direction: row;
+  margin-right: 50px;
+  flex-grow: 1;
+  padding-left: 2px;
+  min-width: 60%;
+  max-width: fit-content;
   align-items: left;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
 }
-
-.input {
-  width: 50%;
+.small-right-container {
+  margin-left: 50px;
+  min-width: 20%;
+  background-color: red;
+  justify-content: space-evenly;
+}
+.navbar-right-container {
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
+  margin-left: 50;
+}
+a:link,
+a:visited {
+  color: #000000;
+  padding: 2px 2px;
+  text-decoration: none;
+  display: inline-block;
+}
+a:hover {
+  color: White;
+}
+a:active {
+  background-color: Green;
 }
