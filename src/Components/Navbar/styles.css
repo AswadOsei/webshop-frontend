@@ -14,10 +14,10 @@
 .navbar-left-container {
   display: flex;
   flex-direction: row;
-  margin-right: 40px;
+  margin-right: 30%;
 }
 .small-left-container {
-  margin-right: 50px;
+  margin-right: 60%;
   flex-grow: 1;
   padding-left: 2px;
   min-width: 60%;
@@ -25,7 +25,11 @@
   align-items: left;
   display: flex;
   flex-direction: row;
-  justify-content: left;
+  justify-content: space-between;
+}
+.small-right-container {
+  margin-right: 30%;
+  margin-left: 10%;
 }
 
 .navbar-right-container {
@@ -46,4 +50,13 @@ a:hover {
 }
 a:active {
   background-color: Grey;
+}
+.theShop {
+  margin-right: 20%;
+  float: left;
+  padding: 0;
+}
+
+.links {
+  margin-right: 4%;
 }

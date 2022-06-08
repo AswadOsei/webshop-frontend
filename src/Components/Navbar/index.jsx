@@ -9,21 +9,23 @@ export default function Navbar() {
     <div className="navbar-container">
       <div className="navbar-left-container">
         <div className="small-left-container">
-          <p>The Shop</p>
-          <div>
+          <div className="theShop">
+            The <a style={{ color: "white" }}>Shop</a>
+          </div>
+          <div className="links">
             <NavLink to={"./"}>Home</NavLink>{" "}
           </div>
-          <div>
+          <div className="links">
             <NavLink to={"./"}>Products</NavLink>
           </div>
-          <div>
+          <div className="links">
             {" "}
             <NavLink to={"./"}>Blog</NavLink>
           </div>{" "}
-          <div>
+          <div className="links">
             <NavLink to={"./"}>Shop</NavLink>{" "}
           </div>
-          <div>
+          <div className="links">
             <NavLink to={"./"}>Contact</NavLink>
           </div>
         </div>
