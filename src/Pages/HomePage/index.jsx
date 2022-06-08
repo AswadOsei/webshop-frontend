@@ -8,6 +8,7 @@ function compare_name(product_a, product_b) {
 
 const HomePage = () => {
   const [products, setProducts] = useState([]);
+  const [filter, setFilter] = useState("");
 
   useEffect(() => {
     const getAllProducts = async () => {
@@ -19,20 +20,40 @@ const HomePage = () => {
     getAllProducts();
   }, []);
 
+  const updateFilter = (e) => {
+    setFilter(e.target.value);
+  };
+
   const productsSorted = [...products].sort(compare_name);
   return (
-    <div>
-      <h1>Home </h1>
-      {productsSorted.map((product) => (
-        <HomePageBlock
-          key={product.id}
-          title={product.title}
-          image={product.mainImage}
-          price={product.price}
-          description={product.description}
-          rating={product.rating}
-        />
-      ))}
+    <div className="homepage-container">
+      <div className="top-banner">Banner</div>
+      <div className="homepage-content">
+        <div className="sidebar">
+          {/* <input type="text" value={filter} onChange={updateFilter} />
+          {products ? (
+            products
+              .filter((sidebar) => sidebar.title.startsWith(filter))
+              .map((sidebar, id) => (
+                <HomePageBlock key={id} title={sidebar.title} />
+              ))
+          ) : (
+            <p>Loading ..</p>
+          )} */}
+        </div>
+        <div className="product-info">
+          {productsSorted.map((product) => (
+            <HomePageBlock
+              key={product.id}
+              title={product.title}
+              image={product.mainImage}
+              price={product.price}
+              description={product.description}
+              rating={product.rating}
+            />
+          ))}
+        </div>
+      </div>
     </div>
   );
 };

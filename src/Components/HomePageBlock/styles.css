@@ -1,0 +1,24 @@
+.homepage-container {
+  flex-direction: column;
+}
+.homepage-content {
+  border: solid red;
+}
+
+.top-banner {
+  height: 500px;
+  background-color: #937cf1;
+}
+
+.product-info {
+  border: solid black;
+  /* background-color: rgb(162, 244, 216); */
+}
+
+img {
+  height: 300px;
+  width: 300px;
+}
+
+.product-info {
+}
