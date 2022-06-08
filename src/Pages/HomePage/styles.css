@@ -1,22 +1,31 @@
 .homepage-container {
   flex-direction: column;
 }
+.homepage-content {
+  border: solid red;
+  display: flex;
+  margin-left: 10em;
+  margin-right: 10em;
+}
 
 .top-banner {
   height: 500px;
   background-color: #937cf1;
 }
-/* .Homepage-container {
-    flex-direction: row;
-  }
-  
-  .product-info {
-    border: solid black;
-    background-color: rgb(162, 244, 216);
-    
-  }
-  
-  img {
-    height: 300px;
-    width: 300px;
-  } */
+
+.product-info {
+  border: solid black;
+  background-color: rgb(209, 205, 246);
+
+  float: left;
+  width: 80%;
+}
+.sidebar {
+  float: left;
+  width: 20%;
+}
+
+img {
+  height: 200px;
+  width: 200px;
+}
