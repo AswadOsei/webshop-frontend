@@ -27,12 +27,7 @@
   flex-direction: row;
   justify-content: left;
 }
-.small-right-container {
-  margin-left: 50px;
-  min-width: 20%;
-  background-color: red;
-  justify-content: space-evenly;
-}
+
 .navbar-right-container {
   display: flex;
   flex-direction: row;
@@ -50,5 +45,5 @@ a:hover {
   color: White;
 }
 a:active {
-  background-color: Green;
+  background-color: Grey;
 }
