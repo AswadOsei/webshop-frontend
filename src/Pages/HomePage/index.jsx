@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import HomePageBlock from "../../Components/HomePageBlock";
+import("./styles.css");
 
 function compare_name(product_a, product_b) {
   return product_a.title.localeCompare(product_b.title);
@@ -30,6 +31,8 @@ const HomePage = () => {
       <div className="top-banner">Banner</div>
       <div className="homepage-content">
         <div className="sidebar">
+          {" "}
+          Sidebar will hold filtering options and much more
           {/* <input type="text" value={filter} onChange={updateFilter} />
           {products ? (
             products
@@ -44,9 +47,9 @@ const HomePage = () => {
         <div className="product-info">
           {productsSorted.map((product) => (
             <HomePageBlock
+              image={product.mainImage}
               key={product.id}
               title={product.title}
-              image={product.mainImage}
               price={product.price}
               description={product.description}
               rating={product.rating}
