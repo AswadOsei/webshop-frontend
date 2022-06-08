@@ -1,0 +1,21 @@
+.banner {
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 17%;
+}
+
+.banner-left-box {
+  float: left;
+  margin-left: 15%;
+  color: white;
+}
+.banner-right-box {
+  float: right;
+  margin-right: 15%;
+  flex-direction: column;
+  justify-content: end;
+}
+
+.girl-img {
+  max-width: 150px;
+}
