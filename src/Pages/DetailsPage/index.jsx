@@ -1,3 +1,4 @@
+import "./styles.css";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
@@ -28,20 +29,22 @@ const DetailsPage = () => {
   const { title, price, description, rating, mainImage } = product;
 
   return (
-    <div className="Details">
-      <div className="Banner"></div>
-      <h3>This is detailspage</h3>
-      {product ? (
-        <ProductDetails
-          title={title}
-          price={price}
-          description={description}
-          rating={rating}
-          image={mainImage}
-        />
-      ) : (
-        <h3>Product not found</h3>
-      )}
+    <div className="wrapper">
+      <div className="details">
+        <div className="product-details" style={{ padding: "0 15px" }}>
+          {product ? (
+            <ProductDetails
+              title={title}
+              price={price}
+              description={description}
+              rating={rating}
+              image={mainImage}
+            />
+          ) : (
+            <h3>Product not found</h3>
+          )}
+        </div>
+      </div>
     </div>
   );
 };
