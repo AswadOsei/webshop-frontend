@@ -3,6 +3,7 @@ import axios from "axios";
 import HomePageBlock from "../../Components/HomePageBlock";
 import Banner from "../../Components/Banner";
 import { BsStarFill } from "@react-icons/all-files/bs/BsStarFill";
+import FilterContent from "../../Components/FilterPageItems";
 import("./styles.css");
 
 function compare_name(product_a, product_b) {
@@ -12,12 +13,19 @@ function compare_name(product_a, product_b) {
 const HomePage = () => {
   const [products, setProducts] = useState([]);
   const [filter, setFilter] = useState("");
+  const [categories, setCategories] = useState([]);
+  const [selectedCategories, setSelectedCategories] = useState([]);
 
   useEffect(() => {
     const getAllProducts = async () => {
       try {
         const response = await axios.get("http://localhost:4000/products");
         setProducts(response.data);
+
+        const categoriesResponse = await axios.get(
+          "http://localhost:4000/categories"
+        );
+        setCategories(categoriesResponse.data);
       } catch (error) {}
     };
     getAllProducts();
@@ -47,6 +55,11 @@ const HomePage = () => {
   //   }
   // };
 
+  const filteredProducts =
+    selectedCategories.length === 0
+      ? products
+      : products.filter((item) => selectedCategories.includes(item));
+
   const productsSorted = [...products].sort(compare_name);
   return (
     <div className="homepage-container">
@@ -55,21 +68,15 @@ const HomePage = () => {
       </div>
       <div className="homepage-content">
         <div className="sidebar">
-          {" "}
-          Sidebar will hold filtering options and much more
-          {/* <input type="text" value={filter} onChange={updateFilter} />
-          {products ? (
-            products
-              .filter((sidebar) => sidebar.title.startsWith(filter))
-              .map((sidebar, id) => (
-                <HomePageBlock key={id} title={sidebar.title} />
-              ))
-          ) : (
-            <p>Loading ..</p>
-          )} */}
+          {categories.map((categorie) => (
+            <div>
+              <input type="checkbox" />
+              <label> {categorie.title} </label>
+            </div>
+          ))}
         </div>
         <div className="product-info">
-          {productsSorted.map((product) => (
+          {filteredProducts.map((product) => (
             <HomePageBlock
               image={product.mainImage}
               key={product.id}
