@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import HomePageBlock from "../../Components/HomePageBlock";
+import Banner from "../../Components/Banner";
+import { BsStarFill } from "@react-icons/all-files/bs/BsStarFill";
 import("./styles.css");
 
 function compare_name(product_a, product_b) {
@@ -24,11 +26,33 @@ const HomePage = () => {
   const updateFilter = (e) => {
     setFilter(e.target.value);
   };
+  // const rateStars = (rating) => {
+  //   const roundedRating = Math.round(rating);
+  //   if ((roundedRating = 1)) {
+  //     return <BsStarFill />;
+  //   }
+  //   if ((roundedRating = 2)) {
+  //     return <BsStarFill />;
+  //   }
+  //   if ((roundedRating = 3)) {
+  //     return <BsStarFill />;
+  //   }
+  //   if ((roundedRating = 4)) {
+  //     return <BsStarFill />;
+  //   }
+  //   if ((roundedRating = 5)) {
+  //     return <BsStarFill />;
+  //   } else {
+  //     return "Still not rated";
+  //   }
+  // };
 
   const productsSorted = [...products].sort(compare_name);
   return (
     <div className="homepage-container">
-      <div className="top-banner">Banner</div>
+      <div className="top-banner">
+        <Banner />
+      </div>
       <div className="homepage-content">
         <div className="sidebar">
           {" "}
