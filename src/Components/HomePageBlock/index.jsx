@@ -9,7 +9,7 @@ export default function HomePageBlock(props) {
         <br />
         {/* <div className="hp-productinfo"> */}
         <img className="image" src={props.image} alt={props.title} />
-        <h4>Article Name:{props.title} </h4>
+        <p>Article Name:{props.title} </p>
         <p> Description : {props.description}</p>
         <p> Price : {props.price}</p>
         <p> Rating : {props.rating}</p>
