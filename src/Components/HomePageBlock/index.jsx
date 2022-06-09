@@ -19,15 +19,17 @@ export default function HomePageBlock(props) {
           <p> {props.description}</p>
           <p> Price : {props.price} €</p>
           <p> Rating : {props.rating}</p>
-          <NavLink to="/user">
-            <FiUser />
-          </NavLink>
-          <NavLink to="/shoppingcard">
-            <TiShoppingCart />
-          </NavLink>
-          <NavLink to="/favourites">
-            <BsSuitHeart />
-          </NavLink>
+          <div className="productcard-icons">
+            <NavLink to="/user">
+              <FiUser />
+            </NavLink>
+            <NavLink to="/shoppingcard">
+              <TiShoppingCart />
+            </NavLink>
+            <NavLink to="/favourites">
+              <BsSuitHeart />
+            </NavLink>
+          </div>
         </div>
       </div>
     </div>
