@@ -38,7 +38,7 @@ export default function Navbar() {
           <NavLink to="/user">
             <FiUser />
           </NavLink>
-          <NavLink to="/shoppingcard">
+          <NavLink to="/shoppingcart">
             <TiShoppingCart />
           </NavLink>
           <NavLink to="/favourites">
