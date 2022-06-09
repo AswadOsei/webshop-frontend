@@ -1,18 +1,7 @@
-export default function ShoppingCart() {
+import { useState } from "react";
+export default function ShoppingCart(props) {
   const [cartItems, setCartItems] = useState([]);
   const addProduct = (product) => {
-    // const exist = cartItems.find(
-    //   (productInCart) => productInCart.id === product.id
-    // );
-    // if (exist) {
-    //   setCartItems(
-    //     cartItems.map((productInCart) =>
-    //       productInCart.id === product.id
-    //         ? { ...exist, qty: exist.qty + 1 }
-    //         : productInCart
-    //     )
-    //   );
-    // } else {
     setCartItems([...cartItems, product]);
   };
   return (
@@ -26,7 +15,7 @@ export default function ShoppingCart() {
 
           <button
             onClick={() => {
-              addProduct();
+              addProduct(props.title);
             }}
           >
             Add to shopping Cart
@@ -36,3 +25,16 @@ export default function ShoppingCart() {
     </div>
   );
 }
+
+// const exist = cartItems.find(
+//   (productInCart) => productInCart.id === product.id ???
+// );
+// if (exist) {
+//   setCartItems(
+//     cartItems.map((productInCart) =>
+//       productInCart.id === product.id
+//         ? { ...exist, quantity: exist.quantity + 1 }
+//         : productInCart
+//     )
+//   );
+// } else {
