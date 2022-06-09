@@ -38,6 +38,9 @@
   margin: 10px;
   margin-left: 50;
 }
+p {
+  justify-content: start;
+}
 a:link,
 a:visited {
   color: #000000;
