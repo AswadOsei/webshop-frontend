@@ -18,7 +18,7 @@ export default function HomePageBlock(props) {
           <h4>{props.title} </h4>
 
           <p> {props.description}</p>
-          <p> Price : {props.price} €</p>
+          <p> {props.price} €</p>
           <p> Rating : {props.rating}</p>
         </div>
       </div>
