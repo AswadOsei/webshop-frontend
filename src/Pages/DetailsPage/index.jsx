@@ -6,18 +6,15 @@ import ProductDetails from "../../Components/ProductDetailPage";
 
 import Banner from "../../Components/Banner";
 
-
 import AddReviewComponent from "../../Components/AddReview/AddReview";
-
 
 const DetailsPage = () => {
   const params = useParams();
 
   const [product, setProduct] = useState([]);
-
+  // const [desc, setDesc] =useState([])
 
   const [reviewOpen, setReviewOpen] = useState(false);
-
 
   useEffect(() => {
     const fetchProduct = async (req, res, next) => {
@@ -35,21 +32,21 @@ const DetailsPage = () => {
     fetchProduct();
   }, []);
 
-  const descInfo = useEffect(() => {
-    const fetchdescrip = async () => {
-      try {
-        const response = await axios.get("http://localhost:4000/products");
-        setDesc(response.data.description);
-        console.log(
-          "response.description...............",
-          response.data.description
-        );
-      } catch (e) {
-        console.log(e.message);
-      }
-    };
-    fetchdescrip();
-  }, []);
+  // const descInfo = useEffect(() => {
+  //   const fetchdescrip = async () => {
+  //     try {
+  //       const response = await axios.get("http://localhost:4000/products");
+  //       setDesc(response.data.description);
+  //       console.log(
+  //         "response.description...............",
+  //         response.data.description
+  //       );
+  //     } catch (e) {
+  //       console.log(e.message);
+  //     }
+  //   };
+  //   fetchdescrip();
+  // }, []);
 
   const { title, price, description, rating, mainImage } = product;
 
