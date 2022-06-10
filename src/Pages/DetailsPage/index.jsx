@@ -3,14 +3,21 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
 import ProductDetails from "../../Components/ProductDetailPage";
+
 import Banner from "../../Components/Banner";
-import Description from "../../Components/Description";
+
+
+import AddReviewComponent from "../../Components/AddReview/AddReview";
+
 
 const DetailsPage = () => {
   const params = useParams();
 
   const [product, setProduct] = useState([]);
-  const [desc, setDesc] = useState([]);
+
+
+  const [reviewOpen, setReviewOpen] = useState(false);
+
 
   useEffect(() => {
     const fetchProduct = async (req, res, next) => {
@@ -63,7 +70,17 @@ const DetailsPage = () => {
           image={mainImage}
         />
       ) : (
-        <h3>Product not found</h3>
+        <p>Loading ...</p>
+      )}
+      {!reviewOpen ? (
+        <button
+          className="buttonComment"
+          onClick={() => setReviewOpen(!reviewOpen)}
+        >
+          Leave a comment
+        </button>
+      ) : (
+        <AddReviewComponent title={product.title} productId={product.id} />
       )}
 
       {/*<div className="description">

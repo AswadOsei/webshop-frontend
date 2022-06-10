@@ -30,6 +30,7 @@ export default function HomePageBlock(props) {
               <BsSuitHeart />
             </NavLink>
           </div>
+          <NavLink to={`/details/${props.id}`}> Read more</NavLink>
         </div>
       </div>
     </div>
