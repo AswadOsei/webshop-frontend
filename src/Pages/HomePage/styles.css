@@ -2,7 +2,7 @@
   flex-direction: column;
 }
 .homepage-content {
-  border: solid red;
+  /* border: solid red; */
   display: flex;
   margin-left: 10em;
   margin-right: 10em;
@@ -14,8 +14,8 @@
 }
 
 .product-info {
-  border: solid black;
-  background-color: rgb(209, 205, 246);
+  /* border: solid black; */
+  background-color: white;
 
   float: left;
   width: 80%;

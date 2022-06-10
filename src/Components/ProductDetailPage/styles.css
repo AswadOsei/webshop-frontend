@@ -15,8 +15,8 @@
   animation-duration: 4s;
   animation-timing-function: ease-in;
   animation-direction: normal;
-  border-radius: 40px !important;
-  border: 2px solid #555;
+  /* border-radius: 40px !important;
+  border: 2px solid #555; */
 }
 
 .card__ {
