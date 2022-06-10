@@ -1,9 +1,16 @@
-img {
+.detailsCard {
+  height: 350px;
+  width: 100%;
+  background-color: white;
+}
+
+.card__img {
   display: block;
   margin: 0 auto;
   padding: 20px;
   width: 300;
   height: 300;
+  float: left;
   animation: spin 4s;
   animation-duration: 4s;
   animation-timing-function: ease-in;
@@ -12,6 +19,42 @@ img {
   border: 2px solid #555;
 }
 
-.Details.img {
-  float: left;
+.card__ {
+  box-shadow: 0px 0px 10px 5px color-gray300;
+  border-radius: 40px !important;
+  min-width: 28rem;
+  display: flex;
+}
+
+.card__body {
+  margin-right: 1rem;
+}
+
+.card__title {
+  line-height: 1.4rem;
+  margin: 20px 30px;
+}
+
+.card__description {
+  line-height: 1.2rem;
+  margin: 20px 30px;
+}
+
+.card__price {
+  font-size: 13px solid black;
+  margin: 20px 30px;
+
+  text-align: left;
+  margin: 20px 30px;
+}
+.card__rating {
+  font-size: 8px solid black;
+
+  text-align: left;
+  margin: 20px 30px;
+}
+
+.card__btn {
+  margin-right: 30px;
+  background-color: rgb(162, 30, 174);
 }
