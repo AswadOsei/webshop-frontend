@@ -20,16 +20,17 @@ export default function AddReviewComponent(props) {
   useEffect(() => {
     const fetchReviews = async () => {
       try {
-        const getReviews = await axios.get(
+        const getAllreviews = await axios.get(
           `http://localhost:4000/reviews/${props.id}`
         );
-        console.log("All reviews", getReviews);
-        setReviewsAdded(getReviews.data);
-      } catch (e) {}
+        setReviewsAdded(getAllreviews.data);
+      } catch (error) {}
     };
     fetchReviews();
   }, []);
-  console.log("Reviews added", reviewsAdded);
+
+  console.log("All reviews", reviewsAdded);
+
   // onChange of the text area, setReview update the state of review
   // onClick addReview is called to send a http request with the actual value of textarea, which is review, as request body
   return (
