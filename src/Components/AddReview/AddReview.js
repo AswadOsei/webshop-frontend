@@ -1,11 +1,9 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { useParams } from "react-router-dom";
 
 export default function AddReviewComponent(props) {
-  const params = useParams();
   const [review, setReview] = useState("");
-  const [reviewsAdded, setReviewsAdded] = useState("");
+  const [reviewsAdded, setReviewsAdded] = useState([]);
 
   // in axios.post, 1st parameter is the URL and the 2nd is the HTTP request body
   // addReview send request body {review} which is the value of the textarea
@@ -20,18 +18,18 @@ export default function AddReviewComponent(props) {
   //we define our useEffect in the rendering of our component AddReviewComponent
   //to call setReviewsAdded with the data get route
   useEffect(() => {
-    const getAllReviews = async () => {
+    const fetchReviews = async () => {
       try {
-        const getAllreviews = await axios.get(
+        const getReviews = await axios.get(
           `http://localhost:4000/reviews/${props.id}`
         );
-        setReviewsAdded(getAllreviews.data);
-        console.log("All reviews", reviewsAdded);
-      } catch (error) {}
+        console.log("All reviews", getReviews);
+        setReviewsAdded(getReviews.data);
+      } catch (e) {}
     };
-    getAllReviews();
+    fetchReviews();
   }, []);
-
+  console.log("Reviews added", reviewsAdded);
   // onChange of the text area, setReview update the state of review
   // onClick addReview is called to send a http request with the actual value of textarea, which is review, as request body
   return (
