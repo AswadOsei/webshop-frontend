@@ -38,7 +38,10 @@ export default function AddReviewComponent(props) {
       <div>
         {props.title}
         <br />
-        Reviews : {[reviewsAdded.data]}
+        {/* Reviews :{" "}
+        {reviewsAdded.map((r) => (
+          <div>{r.review}</div>
+        ))} */}
         <div className="reviewContainer">
           <br />
           Share your opinion
