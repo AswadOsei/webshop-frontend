@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { useParams } from "react-router-dom";
 
 export default function AddReviewComponent(props) {
+  const params = useParams();
   const [review, setReview] = useState("");
   const [reviewsAdded, setReviewsAdded] = useState("");
 
@@ -18,19 +20,18 @@ export default function AddReviewComponent(props) {
   //we define our useEffect in the rendering of our component AddReviewComponent
   //to call setReviewsAdded with the data get route
   useEffect(() => {
-    const fetchReviews = async (req, res, next) => {
+    const getAllReviews = async () => {
       try {
-        const getReviews = await axios.get(
+        const getAllreviews = await axios.get(
           `http://localhost:4000/reviews/${props.id}`
         );
-        console.log("All reviews", getReviews.data);
-        setReviewsAdded(getReviews.data);
-      } catch (e) {
-        next(e);
-      }
+        setReviewsAdded(getAllreviews.data);
+        console.log("All reviews", reviewsAdded);
+      } catch (error) {}
     };
-    fetchReviews();
+    getAllReviews();
   }, []);
+
   // onChange of the text area, setReview update the state of review
   // onClick addReview is called to send a http request with the actual value of textarea, which is review, as request body
   return (
@@ -38,7 +39,10 @@ export default function AddReviewComponent(props) {
       <div>
         {props.title}
         <br />
-        Reviews : {[reviewsAdded.data]}
+        Reviews :{" "}
+        {reviewsAdded.map((r) => (
+          <div>{r.review}</div>
+        ))}
         <div className="reviewContainer">
           <br />
           Share your opinion
