@@ -5,6 +5,7 @@ import ProductsPage from "./Pages/ProductsPage";
 import ShoppingCart from "./Components/ShoppingCart/ShoppingCart";
 import { Route, Routes } from "react-router-dom";
 import Navbar from "./Components/Navbar";
+import ReviewPage from "./Pages/ReviewPage/Reviewpage";
 
 import Footer from "./Components/Footer";
 
@@ -19,6 +20,7 @@ function App() {
         <Route path="/shop" element={<ProductsPage />} />
         <Route path="/" element={<HomePage />} />
         <Route path="/shoppingcart" element={<ShoppingCartPage />} />
+        <Route path="/details/:id/reviews" element={<ReviewPage />} />
       </Routes>
       <Footer />
     </div>
