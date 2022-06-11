@@ -21,7 +21,7 @@ const DetailsPage = () => {
         const getProduct = await axios.get(
           `http://localhost:4000/products/${params.id}`
         );
-        console.log("DetailsPage......", getProduct.data);
+        //console.log("DetailsPage......", getProduct.data);
         setProduct(getProduct.data);
       } catch (e) {
         next(e);
@@ -33,7 +33,7 @@ const DetailsPage = () => {
 
   const { id, title, price, description, rating, mainImage } = product;
 
-  console.log("descriptionnnnn........", product);
+  //console.log("descriptionnnnn........", product);
 
   // reviewOpen && <AddReviewComponent === reviewOpen ? <AddReviewComponent
   return (
