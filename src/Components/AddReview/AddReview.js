@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 export default function AddReviewComponent(props) {
   const params = useParams();
   const [review, setReview] = useState("");
-  const [reviewsAdded, setReviewsAdded] = useState("");
+  const [reviewsAdded, setReviewsAdded] = useState([]);
 
   // in axios.post, 1st parameter is the URL and the 2nd is the HTTP request body
   // addReview send request body {review} which is the value of the textarea
@@ -26,11 +26,11 @@ export default function AddReviewComponent(props) {
           `http://localhost:4000/reviews/${props.id}`
         );
         setReviewsAdded(getAllreviews.data);
-        console.log("All reviews", reviewsAdded);
       } catch (error) {}
     };
     getAllReviews();
   }, []);
+  console.log("All reviews", reviewsAdded);
 
   // onChange of the text area, setReview update the state of review
   // onClick addReview is called to send a http request with the actual value of textarea, which is review, as request body
