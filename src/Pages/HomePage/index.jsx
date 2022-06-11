@@ -12,7 +12,7 @@ function compare_name(product_a, product_b) {
 
 const HomePage = () => {
   const [products, setProducts] = useState([]);
-  const [filter, setFilter] = useState("");
+  const [filterItems, setFilterItems] = useState(false);
   const [categories, setCategories] = useState([]);
   const [selectedCategories, setSelectedCategories] = useState([]);
 
@@ -31,36 +31,19 @@ const HomePage = () => {
     getAllProducts();
   }, []);
 
-  const updateFilter = (e) => {
-    setFilter(e.target.value);
-  };
-  // const rateStars = (rating) => {
-  //   const roundedRating = Math.round(rating);
-  //   if ((roundedRating = 1)) {
-  //     return <BsStarFill />;
-  //   }
-  //   if ((roundedRating = 2)) {
-  //     return <BsStarFill />;
-  //   }
-  //   if ((roundedRating = 3)) {
-  //     return <BsStarFill />;
-  //   }
-  //   if ((roundedRating = 4)) {
-  //     return <BsStarFill />;
-  //   }
-  //   if ((roundedRating = 5)) {
-  //     return <BsStarFill />;
-  //   } else {
-  //     return "Still not rated";
-  //   }
-  // };
-
+  // const changeValue = setFilterItems(!filterItems);
   const filteredProducts =
     selectedCategories.length === 0
       ? products
-      : products.filter((item) => selectedCategories.includes(item));
+      : products.filter((item) => selectedCategories.includes(item.id));
+
+  // const filterFunction = filterItems ? setSelectedCategories() :
 
   const productsSorted = [...products].sort(compare_name);
+  console.log("Filtered products", filteredProducts);
+  console.log("filter items", filterItems);
+
+  //how can we update the state of selectedCategories?
   return (
     <div className="homepage-container">
       <div className="top-banner">
@@ -70,7 +53,11 @@ const HomePage = () => {
         <div className="sidebar">
           {categories.map((categorie) => (
             <div>
-              <input type="checkbox" />
+              <input
+                type="checkbox"
+                // value={selectedCategories}
+                // onChange={setSelectedCategories()}
+              />
               <label> {categorie.title} </label>
             </div>
           ))}

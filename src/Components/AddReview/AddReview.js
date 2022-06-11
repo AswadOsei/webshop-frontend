@@ -1,9 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { useParams } from "react-router-dom";
 
 export default function AddReviewComponent(props) {
-  const params = useParams();
   const [review, setReview] = useState("");
   const [reviewsAdded, setReviewsAdded] = useState([]);
 
@@ -20,7 +18,7 @@ export default function AddReviewComponent(props) {
   //we define our useEffect in the rendering of our component AddReviewComponent
   //to call setReviewsAdded with the data get route
   useEffect(() => {
-    const getAllReviews = async () => {
+    const fetchReviews = async () => {
       try {
         const getAllreviews = await axios.get(
           `http://localhost:4000/reviews/${props.id}`
@@ -28,8 +26,10 @@ export default function AddReviewComponent(props) {
         setReviewsAdded(getAllreviews.data);
       } catch (error) {}
     };
-    getAllReviews();
+    fetchReviews();
   }, []);
+  console.log("All reviews", reviewsAdded);
+
   console.log("All reviews", reviewsAdded);
 
   // onChange of the text area, setReview update the state of review
